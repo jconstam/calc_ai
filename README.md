@@ -33,19 +33,23 @@ calculator/
 ## Getting Started
 
 1. **Clone the repository:**
-   ```bash
-   git clone <repository-url>
-   cd calculator
-   ```
+
+    ```bash
+    git clone <repository-url>
+    cd calculator
+    ```
 
 2. **Start the development server:**
-   ```powershell
-   .\start-dev.ps1
-   ```
-   This will:
-   - Build the development Docker image
-   - Start the live-server
-   - Make the calculator available at http://127.0.0.1:8081/
+
+    ```powershell
+    .\start-dev.ps1
+    ```
+
+    This will:
+
+    - Build the development Docker image
+    - Start the live-server
+    - Make the calculator available at http://127.0.0.1:8081/
 
 3. **Access the calculator:**
    Open your browser and navigate to http://127.0.0.1:8081/
@@ -70,8 +74,9 @@ docker run calculator-test
 ## Keyboard Support
 
 The calculator supports keyboard input:
+
 - Numbers: 0-9
-- Operations: +, -, *, /
+- Operations: +, -, \*, /
 - Enter: Calculate result
 - Escape: Clear
 - Backspace: Delete last digit

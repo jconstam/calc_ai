@@ -82,13 +82,13 @@ class Calculator {
         let result;
         switch (func) {
             case 'sin':
-                result = Math.sin(value * Math.PI / 180);
+                result = Math.sin((value * Math.PI) / 180);
                 break;
             case 'cos':
-                result = Math.cos(value * Math.PI / 180);
+                result = Math.cos((value * Math.PI) / 180);
                 break;
             case 'tan':
-                result = Math.tan(value * Math.PI / 180);
+                result = Math.tan((value * Math.PI) / 180);
                 break;
             default:
                 return;
