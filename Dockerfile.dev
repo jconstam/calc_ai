@@ -5,5 +5,14 @@ WORKDIR /app
 # Install live-server globally
 RUN npm install -g live-server@1.2.2
 
+# Copy package files
+COPY package*.json ./
+
+# Install dependencies
+RUN npm install
+
+# Copy the rest of the application
+COPY . .
+
 # Default command to run live-server directly
 CMD ["live-server", "--port=8081"]
