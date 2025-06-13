@@ -8,7 +8,6 @@ const operatorButtons = document.querySelectorAll('.operator');
 const trigButtons = document.querySelectorAll('.trig');
 const equalsButton = document.querySelector('.equals');
 const clearButton = document.querySelector('.clear');
-const plusMinusButton = document.querySelector('.operator:nth-child(2)');
 
 function updateDisplay() {
     resultDisplay.value = calculator.getDisplay();
