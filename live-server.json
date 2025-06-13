@@ -1,0 +1,6 @@
+{
+    "port": 8081,
+    "open": true,
+    "file": "index.html",
+    "wait": 1000
+}
