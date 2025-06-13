@@ -5,31 +5,23 @@ RUN echo "https://dl-cdn.alpinelinux.org/alpine/v3.19/community" >> /etc/apk/rep
     apk add --no-cache \
     chromium \
     firefox-esr \
-    webkit2gtk-4.1 \
-    xvfb \
-    # Required for Playwright
-    libstdc++ \
-    libgcc \
-    libx11 \
-    libxcomposite \
-    libxcursor \
-    libxdamage \
-    libxext \
-    libxi \
-    libxtst \
     nss \
-    cups \
-    libxscrnsaver \
-    libxrandr \
-    alsa-lib \
-    at-spi2-core \
-    pango \
-    gtk+3.0 \
-    mesa-gbm \
-    pulseaudio
+    freetype \
+    freetype-dev \
+    harfbuzz \
+    ca-certificates \
+    ttf-freefont \
+    nodejs \
+    yarn \
+    xvfb \
+    dbus \
+    ttf-liberation \
+    fontconfig \
+    pciutils \
+    python3
 
-# Install live-server globally
-RUN npm install -g live-server@1.2.2
+# Install live-server and serve globally
+RUN npm install -g live-server@1.2.2 serve
 
 # Set working directory
 WORKDIR /app

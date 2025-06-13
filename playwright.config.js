@@ -1,4 +1,4 @@
-import { defineConfig, devices } from '@playwright/test';
+import { defineConfig } from '@playwright/test';
 
 export default defineConfig({
     testDir: './tests/browser',
@@ -8,42 +8,23 @@ export default defineConfig({
     workers: process.env.CI ? 1 : undefined,
     reporter: 'html',
     use: {
-        baseURL: 'http://localhost:8081',
+        baseURL: 'http://localhost:8080',
         trace: 'on-first-retry',
-        screenshot: 'only-on-failure',
+    },
+    webServer: {
+        command: 'python3 -m http.server 8080 --directory src',
+        url: 'http://localhost:8080',
+        reuseExistingServer: !process.env.CI,
     },
     projects: [
         {
             name: 'chromium',
             use: {
-                ...devices['Desktop Chrome'],
                 launchOptions: {
                     executablePath: '/usr/bin/chromium-browser',
-                },
-            },
-        },
-        {
-            name: 'firefox',
-            use: {
-                ...devices['Desktop Firefox'],
-                launchOptions: {
-                    executablePath: '/usr/bin/firefox',
-                },
-            },
-        },
-        {
-            name: 'webkit',
-            use: {
-                ...devices['Desktop Safari'],
-                launchOptions: {
-                    executablePath: '/usr/bin/webkit2gtk-4.1',
-                },
-            },
-        },
+                    args: ['--no-sandbox', '--headless']
+                }
+            }
+        }
     ],
-    webServer: {
-        command: 'npm run start',
-        url: 'http://localhost:8081',
-        reuseExistingServer: !process.env.CI,
-    },
 });
