@@ -59,10 +59,29 @@ clearButton.addEventListener('click', () => {
     updateDisplay();
 });
 
-document.addEventListener('keydown', (event) => {
-    if ([
-        '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '.', '+', '-', '*', '/', 'Enter', 'Escape', 'Backspace'
-    ].includes(event.key)) {
+document.addEventListener('keydown', event => {
+    if (
+        [
+            '0',
+            '1',
+            '2',
+            '3',
+            '4',
+            '5',
+            '6',
+            '7',
+            '8',
+            '9',
+            '.',
+            '+',
+            '-',
+            '*',
+            '/',
+            'Enter',
+            'Escape',
+            'Backspace',
+        ].includes(event.key)
+    ) {
         event.preventDefault();
     }
     if (/^[0-9]$/.test(event.key)) {
@@ -122,6 +141,12 @@ function simulateButtonPress(button) {
 }
 
 function findButtonByText(text) {
-    const allButtons = [...numberButtons, ...operatorButtons, ...trigButtons, equalsButton, clearButton];
+    const allButtons = [
+        ...numberButtons,
+        ...operatorButtons,
+        ...trigButtons,
+        equalsButton,
+        clearButton,
+    ];
     return allButtons.find(button => button.textContent === text);
 }

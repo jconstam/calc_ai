@@ -1,22 +1,22 @@
 name: CI
 
 on:
-  push:
-    branches: [ main ]
-  pull_request:
-    branches: [ main ]
+    push:
+        branches: [main]
+    pull_request:
+        branches: [main]
 
 jobs:
-  docker:
-    runs-on: ubuntu-latest
+    docker:
+        runs-on: ubuntu-latest
 
-    steps:
-    - uses: actions/checkout@v4
+        steps:
+            - uses: actions/checkout@v4
 
-    - name: Set up Docker Buildx
-      uses: docker/setup-buildx-action@v3
+            - name: Set up Docker Buildx
+              uses: docker/setup-buildx-action@v3
 
-    - name: Build and test development image
-      run: |
-        docker build -t calculator-dev -f Dockerfile.dev .
-        docker run --rm -v "$(pwd):/app" -w /app calculator-dev sh -c "npm install && npm run format && npm run lint && npm test"
+            - name: Build and test development image
+              run: |
+                  docker build -t calculator-dev -f Dockerfile.dev .
+                  docker run --rm -v "$(pwd):/app" -w /app calculator-dev sh -c "npm install && npm run format && npm run lint && npm test"
