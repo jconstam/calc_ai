@@ -45,11 +45,7 @@ jobs:
             - name: Set up Docker Buildx
               uses: docker/setup-buildx-action@v3
 
-            - name: Install Playwright browsers
-              run: |
-                  docker build -t calculator-dev -f Dockerfile.dev .
-                  docker run --rm -v "$(pwd):/app" -w /app calculator-dev sh -c "npm install && npx playwright install --with-deps"
-
             - name: Run Playwright tests
               run: |
+                  docker build -t calculator-dev -f Dockerfile.dev .
                   docker run --rm -v "$(pwd):/app" -w /app calculator-dev sh -c "npm run test:browser"

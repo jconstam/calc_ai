@@ -15,15 +15,30 @@ export default defineConfig({
     projects: [
         {
             name: 'chromium',
-            use: { ...devices['Desktop Chrome'] },
+            use: {
+                ...devices['Desktop Chrome'],
+                launchOptions: {
+                    executablePath: '/usr/bin/chromium-browser',
+                },
+            },
         },
         {
             name: 'firefox',
-            use: { ...devices['Desktop Firefox'] },
+            use: {
+                ...devices['Desktop Firefox'],
+                launchOptions: {
+                    executablePath: '/usr/bin/firefox',
+                },
+            },
         },
         {
             name: 'webkit',
-            use: { ...devices['Desktop Safari'] },
+            use: {
+                ...devices['Desktop Safari'],
+                launchOptions: {
+                    executablePath: '/usr/bin/webkit2gtk-4.0',
+                },
+            },
         },
     ],
     webServer: {
