@@ -21,10 +21,10 @@ RUN apk add --no-cache \
     libxscrnsaver \
     libxrandr \
     alsa-lib \
-    atk-bridge \
+    at-spi2-atk \
     at-spi2-core \
     pango \
-    gtk+ \
+    gtk3 \
     mesa-gbm \
     pulseaudio
 
