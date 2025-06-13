@@ -19,8 +19,8 @@ RUN apk add --no-cache \
     # Additional dependencies for WebKit
     webkit2gtk-4.1
 
-# Install live-server globally
-RUN npm install -g live-server@1.2.2
+# Install global npm packages
+RUN npm install -g live-server@1.2.2 @playwright/test
 
 # Copy package files
 COPY package*.json ./

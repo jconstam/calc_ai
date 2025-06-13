@@ -48,4 +48,4 @@ jobs:
             - name: Run Playwright tests
               run: |
                   docker build -t calculator-dev -f Dockerfile.dev .
-                  docker run --rm -v "$(pwd):/app" -w /app calculator-dev sh -c "npm run test:browser"
+                  docker run --rm -v "$(pwd):/app" -w /app calculator-dev sh -c "playwright test"
