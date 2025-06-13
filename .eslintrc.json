@@ -5,18 +5,12 @@
         "jest": true,
         "node": true
     },
-    "extends": [
-        "eslint:recommended",
-        "plugin:jest/recommended",
-        "prettier"
-    ],
+    "extends": ["eslint:recommended", "plugin:jest/recommended", "prettier"],
     "parserOptions": {
         "ecmaVersion": "latest",
         "sourceType": "module"
     },
-    "plugins": [
-        "jest"
-    ],
+    "plugins": ["jest"],
     "rules": {
         "no-console": "warn",
         "no-unused-vars": "warn",
@@ -24,9 +18,7 @@
     },
     "overrides": [
         {
-            "files": [
-                "playwright.config.js"
-            ],
+            "files": ["playwright.config.js"],
             "env": {
                 "node": true
             }

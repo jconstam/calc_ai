@@ -22,12 +22,14 @@ RUN echo "https://dl-cdn.alpinelinux.org/alpine/v3.19/community" >> /etc/apk/rep
     libxscrnsaver \
     libxrandr \
     alsa-lib \
-    at-spi2-atk \
     at-spi2-core \
     pango \
-    gtk+3 \
+    gtk+3.0 \
     mesa-gbm \
     pulseaudio
+
+# Install live-server globally
+RUN npm install -g live-server@1.2.2
 
 # Set working directory
 WORKDIR /app
@@ -37,9 +39,6 @@ COPY package*.json ./
 
 # Install dependencies
 RUN npm install
-
-# Install Playwright browsers
-RUN npx playwright install --with-deps chromium firefox webkit
 
 # Copy the rest of the application
 COPY . .
