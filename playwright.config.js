@@ -36,7 +36,7 @@ export default defineConfig({
             use: {
                 ...devices['Desktop Safari'],
                 launchOptions: {
-                    executablePath: '/usr/bin/webkit2gtk-4.0',
+                    executablePath: '/usr/bin/webkit2gtk',
                 },
             },
         },
