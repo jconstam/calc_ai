@@ -19,4 +19,4 @@ jobs:
     - name: Build and test development image
       run: |
         docker build -t calculator-dev -f Dockerfile.dev .
-        docker run --rm -v "$(pwd):/app" -w /app calculator-dev sh -c "npm install && npm test"
+        docker run --rm -v "$(pwd):/app" -w /app calculator-dev sh -c "npm install && npm run lint && npm run format:check && npm test"
