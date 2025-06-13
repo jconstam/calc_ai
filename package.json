@@ -13,7 +13,7 @@
         "security": "snyk test",
         "test:browser": "playwright test",
         "test:browser:ui": "playwright test --ui",
-        "test:coverage": "jest --coverage"
+        "test:coverage": "node --experimental-vm-modules node_modules/jest/bin/jest.js --coverage"
     },
     "devDependencies": {
         "@playwright/test": "^1.53.0",
