@@ -25,7 +25,7 @@ RUN echo "https://dl-cdn.alpinelinux.org/alpine/v3.19/community" >> /etc/apk/rep
     at-spi2-atk \
     at-spi2-core \
     pango \
-    gtk \
+    gtk+3 \
     mesa-gbm \
     pulseaudio
 
