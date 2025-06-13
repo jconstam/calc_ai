@@ -1,7 +1,8 @@
 FROM node:20-alpine
 
-# Install system dependencies
-RUN apk add --no-cache \
+# Enable community repository and install system dependencies
+RUN echo "https://dl-cdn.alpinelinux.org/alpine/v3.19/community" >> /etc/apk/repositories && \
+    apk add --no-cache \
     chromium \
     firefox-esr \
     webkit2gtk-4.1 \
@@ -24,7 +25,7 @@ RUN apk add --no-cache \
     at-spi2-atk \
     at-spi2-core \
     pango \
-    gtk3 \
+    gtk \
     mesa-gbm \
     pulseaudio
 
