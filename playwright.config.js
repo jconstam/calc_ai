@@ -22,9 +22,9 @@ export default defineConfig({
             use: {
                 launchOptions: {
                     executablePath: '/usr/bin/chromium-browser',
-                    args: ['--no-sandbox', '--headless']
-                }
-            }
-        }
+                    args: ['--no-sandbox', '--headless'],
+                },
+            },
+        },
     ],
 });
