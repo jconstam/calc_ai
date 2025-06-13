@@ -12,7 +12,8 @@
         "format:check": "prettier --check .",
         "security": "snyk test",
         "test:browser": "playwright test",
-        "test:browser:ui": "playwright test --ui"
+        "test:browser:ui": "playwright test --ui",
+        "test:coverage": "jest --coverage"
     },
     "devDependencies": {
         "@playwright/test": "^1.53.0",
