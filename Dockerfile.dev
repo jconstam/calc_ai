@@ -17,7 +17,7 @@ RUN apk add --no-cache \
     # Additional dependencies for Firefox
     firefox-esr \
     # Additional dependencies for WebKit
-    webkit2gtk
+    webkit2gtk-4.1
 
 # Install live-server globally
 RUN npm install -g live-server@1.2.2
