@@ -19,14 +19,15 @@ RUN apk add --no-cache \
     # Additional dependencies for WebKit
     webkit2gtk-4.1
 
-# Install global npm packages
-RUN npm install -g live-server@1.2.2 @playwright/test
+# Install live-server globally
+RUN npm install -g live-server@1.2.2
 
 # Copy package files
 COPY package*.json ./
 
-# Install dependencies
-RUN npm install
+# Install dependencies and Playwright
+RUN npm install && \
+    npx playwright install --with-deps chromium firefox webkit
 
 # Copy the rest of the application
 COPY . .
