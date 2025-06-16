@@ -77,11 +77,41 @@ describe('Calculator', () => {
             expect(calculator.operation).toBeNull();
         });
 
-        test('should handle invalid operation', () => {
+        it('should handle invalid operation', () => {
             calculator.inputNumber('5');
             calculator.setOperator('invalid');
             calculator.inputNumber('3');
             expect(calculator.calculate()).toBeUndefined();
+        });
+
+        it('should not calculate when both inputs are empty', () => {
+            const calc = new Calculator();
+            expect(calc.calculate()).toBeUndefined();
+        });
+
+        it('should not calculate when currentInput is empty', () => {
+            const calc = new Calculator();
+            calc.inputNumber('5');
+            calc.setOperator('+');
+            // simulate user not entering second number
+            calc.currentInput = '';
+            expect(calc.calculate()).toBeUndefined();
+        });
+
+        it('should not set operator if currentInput is empty', () => {
+            const calc = new Calculator();
+            expect(calc.setOperator('+')).toBeUndefined();
+            expect(calc.operation).toBeNull();
+        });
+
+        it('should call calculate if previousInput is not empty', () => {
+            const calc = new Calculator();
+            calc.inputNumber('2');
+            calc.setOperator('+');
+            calc.inputNumber('3');
+            calc.setOperator('-'); // This should call calculate
+            expect(calc.previousInput).toBe('5'); // 2 + 3 = 5
+            expect(calc.operation).toBe('-');
         });
     });
 
