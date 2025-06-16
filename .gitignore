@@ -24,5 +24,8 @@ dist/
 build/
 coverage/
 
+# Test results
+test-results/
+
 # Docker
 .docker/
